@@ -11,7 +11,7 @@
         <% if (config.description) { %>
           <div class="description"><%= config.description %></div>
         <% } %>
-        <% if (config.author) { %>
+        <% if (theme.showAuthor && config.author) { %>
           <div class="author"><%= config.author %></div>
         <% } %>
       </div>

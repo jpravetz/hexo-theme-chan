@@ -24,8 +24,15 @@
         return;
       }
       var alt = this.alt;
+      var klass = 'xxx';
+      if ($(this).hasClass('left')) {
+        klass = ' left';
+      }
+      if ($(this).hasClass('right')) {
+        klass = ' right';
+      }
       $(this)
-        .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+        .wrap('<figure class="article-gallery-img' + klass + '" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
         .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
       $(this).after('<figcaption class="caption">' + (alt || '') + '</figcaption>');
     });
